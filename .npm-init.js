@@ -1,3 +1,12 @@
+/*##############################################################################
+# File: setup-npm.js                                                           #
+# Project: template-nodejs                                                     #
+# Created Date: 2022-01-08 21:24:45                                            #
+# Author: Eduardo Policarpo                                                    #
+# Last Modified: 2022-01-08 21:24:45                                           #
+# Modified By: Eduardo Policarpo                                               #
+##############################################################################*/
+
 const fs = require('fs');
 const cp = require('child_process');
 var gitUser = cp.execSync('git config user.name').toString().replace('\n', '');
