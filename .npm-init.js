@@ -1,9 +1,9 @@
 /*##############################################################################
 # File: setup-npm.js                                                           #
-# Project: template-nodejs                                                     #
+# Project: fatalmodel                                                          #
 # Created Date: 2022-01-08 21:24:45                                            #
 # Author: Eduardo Policarpo                                                    #
-# Last Modified: 2022-01-08 21:24:45                                           #
+# Last Modified: 2022-07-15 08:54:13                                           #
 # Modified By: Eduardo Policarpo                                               #
 ##############################################################################*/
 
@@ -207,8 +207,8 @@ customizedData.gitUser = prompt(
     val = val.indexOf('y') !== -1;
     if (val) {
       cp.exec(
-        `curl -i -H "Authorization: token ${github_token}" -d "{\"name\":\"blog\", \"auto_init\": \"true\", \"private\": \"true\", \"gitignore_template\": \"nanoc\"}" https://api.github.com/user/repos`,
-        //`curl -u ${user}:${github_token} -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/user/repos --data-raw "{\"name\":\"teste123\",\"auto_init\":\"true\",\"private\":\"false\"}"`,
+        `curl -u ${user}:${github_token} https://api.github.com/user/repos -d '{"name":${basename}}'`,
+        //`curl -i -H "Authorization: token ${github_token}" -d "{\"name\":\"blog\", \"auto_init\": \"true\", \"private\": \"true\", \"gitignore_template\": \"nanoc\"}" https://api.github.com/user/repos`,
         (error, stdout, stderr) => {
           if (error) {
             console.log(`error: ${error.message}`);
