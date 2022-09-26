@@ -119,6 +119,7 @@ var baseData = {
   name: prompt('name', basename || package.name),
   version: '0.0.1',
   description: prompt((s) => s),
+  main: prompt('entry point', 'index.js', (ep) => fs.writeFileSync(ep, '')),
   main: 'dist/app.js',
   author: 'Eduardo Policarpo',
   license: 'Apache-2.0',
